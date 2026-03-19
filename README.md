@@ -27,6 +27,14 @@ Source report: `experiment/results/experiment_report_mucgec1000_skill_vs_noskill
 
 - Accuracy delta (`chinese-sentence-correction - no-skill`): **+0.0700**
 
+#### Figures
+
+![MuCGEC1000 Accuracy](figures/mucgec1000_accuracy.png)
+
+![MuCGEC1000 Metric Overview](figures/mucgec1000_metric_overview.png)
+
+![MuCGEC1000 Precision Recall Tradeoff](figures/mucgec1000_precision_recall_tradeoff.png)
+
 ### B) `third-party-pycorrector-chinese-gec` vs `chinese-sentence-correction` (MuCGEC100)
 
 Source report: `experiment/results/experiment_report_mucgec100_skill_compare.md`
@@ -38,10 +46,24 @@ Source report: `experiment/results/experiment_report_mucgec100_skill_compare.md`
 
 - Accuracy delta (`chinese-sentence-correction - third-party-pycorrector-chinese-gec`): **+0.0800**
 
+#### Figures
+
+![MuCGEC100 Skill Compare Accuracy](figures/mucgec100_skill_compare_accuracy.png)
+
+![MuCGEC100 Skill Compare Metrics](figures/mucgec100_skill_compare_metrics.png)
+
+![MuCGEC100 Skill Compare Precision Recall](figures/mucgec100_skill_compare_precision_recall.png)
+
 ## Important comparability note
 
 - The `no-skill` comparison and the `pycorrector` comparison come from two completed experiments with different sample sizes (1000 vs 100).
 - So both are real measured results, but `no-skill` vs `third-party-pycorrector-chinese-gec` should be treated as indirect reference unless run in the same exact setup.
+
+### Combined view from existing results
+
+![Existing Results Overview Accuracy F1](figures/existing_results_overview_accuracy_f1.png)
+
+![Existing Results Precision Recall Landscape](figures/existing_results_precision_recall_landscape.png)
 
 ## License
 
