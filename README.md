@@ -1,4 +1,6 @@
-# chinese-sentence-correction
+# Chinese Sentence Correction
+
+[English](README.md) | [中文](README.zh-CN.md)
 
 `chinese-sentence-correction` is a Chinese sentence-correction skill for ill-formed sentence rewriting (病句修改), following a minimal-edit and meaning-preserving policy.
 
