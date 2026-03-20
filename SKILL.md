@@ -1,11 +1,11 @@
 ---
 name: chinese-sentence-correction
-description: Use when correcting Chinese ill-formed sentences (病句) with minimal edits while preserving original meaning, including grammar, wording, word order, redundancy, and logical consistency issues.
+description: Use when proofreading Chinese sentences or articles and returning all ill-formed sentences with error reasons and concrete fixes, while preserving original meaning.
 ---
 
 # Chinese Sentence Correction
 
-用于中文病句修改，遵循“一读二找三改四检查”。
+用于中文病句审校与修改，支持单句和整篇文章，遵循“一读二找三改四检查”。
 
 ## 一读：读通句子，确定原意
 
@@ -39,8 +39,27 @@ description: Use when correcting Chinese ill-formed sentences (病句) with mini
 - 回读 1-2 遍，确认通顺、逻辑一致、指代清晰。
 - 复核是否保持原意，是否引入新错误。
 
-## 输出约束
+## 输出约束（必须）
 
-- 只输出修改后的句子，不输出解释。
-- 若原句无误，保持原句不变。
-- 若有多种正确改法，允许输出任一合理版本。
+- 必须列出文中所有识别到的病句，不能只改一两句。
+- 每条病句必须给出：
+  1. 原句（或关键片段）
+  2. 错误原因（语病类型 + 简短解释）
+  3. 修改建议（可直接替换的改写句）
+- 修改需保持原意，不做无关润色。
+- 若某句存在多处问题，可在同一条下分点说明。
+- 若全文未发现病句，明确写“未发现明显病句”。
+
+## 推荐输出格式
+
+```text
+问题1：
+- 原句：...
+- 错误原因：...
+- 修改建议：...
+
+问题2：
+- 原句：...
+- 错误原因：...
+- 修改建议：...
+```

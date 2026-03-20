@@ -14,13 +14,15 @@
 
 - `SKILL.md`
 
+## Experiment method (brief)
+
+- Dataset: MuCGEC Chinese GEC benchmark slices.
+- Evaluation: answer-aware manual/LLM semantic judging (not exact-string matching).
+- Metric: sentence-level Accuracy / Precision / Recall / F1.
+
 ## Measured results (from real runs)
 
-This repository documents measured results from completed experiments in this workspace.
-
 ### A) `no-skill` vs `chinese-sentence-correction` (MuCGEC dev random 1000)
-
-Source report: `experiment/results/experiment_report_mucgec1000_skill_vs_noskill.md`
 
 | Condition | Accuracy | Precision | Recall | F1 | TP | FP | FN | TN |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -38,8 +40,6 @@ Source report: `experiment/results/experiment_report_mucgec1000_skill_vs_noskill
 ![MuCGEC1000 Precision Recall Tradeoff](figures/mucgec1000_precision_recall_tradeoff.png)
 
 ### B) `third-party-pycorrector-chinese-gec` vs `chinese-sentence-correction` (MuCGEC100)
-
-Source report: `experiment/results/experiment_report_mucgec100_skill_compare.md`
 
 | Condition | Accuracy | Precision | Recall | F1 | TP | FP | FN | TN |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|

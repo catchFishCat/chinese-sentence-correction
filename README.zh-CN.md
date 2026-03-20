@@ -14,13 +14,15 @@
 
 - `SKILL.md`
 
+## 试验方法（简要）
+
+- 数据集：MuCGEC 中文纠错基准数据切片。
+- 评测方式：拿参考答案做人工/LLM语义判定（不是字符串精确匹配）。
+- 指标：句子级 Accuracy / Precision / Recall / F1。
+
 ## 实测结果（来自已完成实验）
 
-本仓库中的结果全部来自已完成实验，不是估算值。
-
 ### A) `no-skill` vs `chinese-sentence-correction`（MuCGEC dev 随机 1000 题）
-
-来源报告：`experiment/results/experiment_report_mucgec1000_skill_vs_noskill.md`
 
 | 条件 | Accuracy | Precision | Recall | F1 | TP | FP | FN | TN |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -38,8 +40,6 @@
 ![MuCGEC1000 Precision Recall Tradeoff](figures/mucgec1000_precision_recall_tradeoff.png)
 
 ### B) `third-party-pycorrector-chinese-gec` vs `chinese-sentence-correction`（MuCGEC100）
-
-来源报告：`experiment/results/experiment_report_mucgec100_skill_compare.md`
 
 | 条件 | Accuracy | Precision | Recall | F1 | TP | FP | FN | TN |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
