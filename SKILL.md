@@ -1,11 +1,11 @@
 ---
 name: chinese-sentence-correction
-description: Use when proofreading Chinese sentences or articles and returning all ill-formed sentences with error reasons and concrete fixes, while preserving original meaning.
+description: “Use when proofreading, grammar-checking, or editing Chinese text (中文校对, 病句修改). Identifies ill-formed sentences covering grammar errors, word choice mistakes, missing components, redundancy, and logical inconsistencies, then returns each error with its type, explanation, and a concrete minimal fix while preserving the original meaning.”
 ---
 
 # Chinese Sentence Correction
 
-用于中文病句审校与修改，支持单句和整篇文章，遵循“一读二找三改四检查”。
+用于中文病句审校与修改，支持单句和整篇文章，遵循”一读二找三改四检查”。
 
 ## 一读：读通句子，确定原意
 
@@ -30,7 +30,7 @@ description: Use when proofreading Chinese sentences or articles and returning a
 
 ## 三改：对症下药，最小修改
 
-- 仅修改已确认错误位置，采用“增、删、调、换”。
+- 仅修改已确认错误位置，采用”增、删、调、换”。
 - 优先最小改动：能改一个词，不改整句。
 - 同句多处错误时，保证修改后语义连贯。
 
@@ -48,7 +48,38 @@ description: Use when proofreading Chinese sentences or articles and returning a
   3. 修改建议（可直接替换的改写句）
 - 修改需保持原意，不做无关润色。
 - 若某句存在多处问题，可在同一条下分点说明。
-- 若全文未发现病句，明确写“未发现明显病句”。
+- 若全文未发现病句，明确写”未发现明显病句”。
+
+## 示例
+
+输入：
+
+> 人工智能与医疗健康的深度融合，正系统性地重塑诊疗流程、健康管理与产业生态，使整个行业都全面彻底地提高了。
+
+输出：
+
+```text
+问题1：
+- 原句：使整个行业都全面彻底地提高了
+- 错误原因：成分残缺（宾语缺失）。”提高”是及物动词，必须带宾语说明提高的对象（如效率、水平）。
+- 修改建议：使整个行业的服务水平都全面提高了
+```
+
+多错误句示例：
+
+> 当AI成为导演的”创作合伙人”，文化产业的生产逻辑正在被改写了。从创意产出到作品落地有那些核心环节？
+
+```text
+问题1：
+- 原句：正在被改写了
+- 错误原因：前后矛盾（时态冲突）。”正在”表示进行中，”了”表示已完成，二者冲突。
+- 修改建议：正在被改写
+
+问题2：
+- 原句：有那些核心环节
+- 错误原因：用词不当。”那”是指示代词，此处应为疑问词”哪”。
+- 修改建议：有哪些核心环节
+```
 
 ## 推荐输出格式
 
